@@ -1,25 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {RadialGauge} from 'react-canvas-gauges'
 
-function App() {
+export const App = () => {
+
+  const [input, setInput] = useState({})
+
+  const handleInputChange = (e) => setInput({
+    ...input,
+    [e.currentTarget.name]: e.currentTarget.value
+  })
   return (
+    <div className="container">
+     <div>
+        <label>Username:</label>
+        <input type="text" name="username" onChange={handleInputChange} />
+      </div>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <RadialGauge
+   units='°C'
+   title='Temperature'
+   value={input.username}
+   minValue={0}
+   maxValue={50}
+   majorTicks={['0', '5', '15', '20', '25', '30', '35', '40', '45', '50']}
+   minorTicks={2}
+></RadialGauge>
+    </div></div>
   );
 }
 
