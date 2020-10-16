@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {RadialGauge} from 'react-canvas-gauges'
+import { useInputChange } from './useInputChange'
 
 export const App = () => {
 
-  const [input, setInput] = useState({})
+  
+  const [input, handleInputChange] = useInputChange()
 
-  const handleInputChange = (e) => setInput({
-    ...input,
-    [e.currentTarget.name]: e.currentTarget.value
-  })
   return (
     <div className="container">
      <div>
@@ -30,5 +28,6 @@ export const App = () => {
     </div></div>
   );
 }
+export default App
 
-export default App;
+
