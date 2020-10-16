@@ -13,13 +13,13 @@ export const App = () => {
     <div className="container">
      <div>
         <label>Enter Temperature:</label>
-        <input type="text" name="username" onChange={handleInputChange} />
+        <input type="text" name="temp" onChange={handleInputChange} />
       </div>
     <div className="App">
       <RadialGauge
    units='°C'
    title='Temperature'
-   value={input.username}
+   value={input.temp*1}
    minValue={0}
    maxValue={50}
    majorTicks={['0', '5', '15', '20', '25', '30', '35', '40', '45', '50']}
