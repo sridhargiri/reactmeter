@@ -14,7 +14,7 @@ export const App = () => {
   return (
     <div className="container">
      <div>
-        <label>Username:</label>
+        <label>Enter Temperature:</label>
         <input type="text" name="username" onChange={handleInputChange} />
       </div>
     <div className="App">
