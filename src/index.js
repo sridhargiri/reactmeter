@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Parent from './Parent';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <span style={{textDecoration:'underline'}}>Child to parent pass state example</span>
+    <Parent />
   </React.StrictMode>,
   document.getElementById('root')
 );
