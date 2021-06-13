@@ -12,6 +12,7 @@ export const App = () => {
   return (
     <div className="container">
      <div>
+     <h3>Demo for honeywell</h3>
         <label>Enter Temperature:</label>
         <input type="text" name="temp" onChange={handleInputChange} />
       </div>
